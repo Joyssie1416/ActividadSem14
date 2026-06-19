@@ -17,13 +17,13 @@ if uri:
         client = MongoClient(uri, serverSelectionTimeoutMS=5000)
         info = client.admin.command("serverStatus")
         hora_servidor = info.get("localTime", datetime.utcnow())
-        st.success(f"✅ Conectado a MongoDB Atlas")
+        st.success(f"Conectado a MongoDB Atlas")
         st.info(f"🕐 Hora del servidor: {hora_servidor}")
         client.close()
     except Exception as e:
-        st.error(f"❌ Error al conectar: {e}")
+        st.error(f"Error al conectar: {e}")
 else:
-    st.warning("⚠️ Variable MONGODB_URI no configurada.")
+    st.warning("Variable MONGODB_URI no configurada.")
 
 # Calculadora
 st.divider()
