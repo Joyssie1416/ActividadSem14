@@ -6,9 +6,9 @@ from datetime import datetime
 st.title("Calculadora de IMC 💪")
 st.write("Esta aplicación calcula tu Índice de Masa Corporal (IMC).")
 
-# Sección MongoDB
+# Conexión de Mensajes
 st.divider()
-st.subheader("🔌 Conexión a MongoDB Atlas")
+st.subheader("Conexión a MongoDB Atlas")
 
 uri = os.environ.get("MONGODB_URI")
 
@@ -18,7 +18,7 @@ if uri:
         info = client.admin.command("serverStatus")
         hora_servidor = info.get("localTime", datetime.utcnow())
         st.success(f"Conectado a MongoDB Atlas")
-        st.info(f"🕐 Hora del servidor: {hora_servidor}")
+        st.info(f"Hora del servidor: {hora_servidor}")
         client.close()
     except Exception as e:
         st.error(f"Error al conectar: {e}")
