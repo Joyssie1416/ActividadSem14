@@ -26,3 +26,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.ACR_LOGIN_SERVER }}/imc-app:latest
+
+      - name: Notificar a Azure Web App
+        run: |
+          curl -X POST "${{ secrets.AZURE_WEBHOOK_URL }}"
