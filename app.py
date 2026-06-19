@@ -3,7 +3,7 @@ import os
 from pymongo import MongoClient
 from datetime import datetime
 
-st.title("Calculadora de IMC 💪")
+st.title("Calculadora de IMC 💪🏋️")
 st.write("Esta aplicación calcula tu Índice de Masa Corporal (IMC).")
 
 # Conexión de Mensajes
